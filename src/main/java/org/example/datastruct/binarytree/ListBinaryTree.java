@@ -24,18 +24,74 @@ public class ListBinaryTree<T> {
     private int size = 0;
 
 
-
-
     /**
      * 上次走过的路径  0-表示左边   1-表示右边
      */
     private int way = 0;
 
-
-
     public ListBinaryTree(Node<T> head) {
         this.head = head;
     }
+
+    public int size() {
+        return this.size;
+    }
+
+
+    /**
+     * 二叉树的先序遍历
+     */
+    public void preOrder() {
+        order(this.head,0);
+    }
+
+
+    /**
+     * 二叉树的中序遍历
+     */
+    public void inOrder() {
+        this.order(this.head,1);
+    }
+
+
+    /**
+     * 二叉树的后序遍历
+     */
+    public void postOrder() {
+        this.order(this.head,2);
+    }
+
+
+    /**
+     * 二叉树的遍历
+     * @param root  遍历节点
+     * @param type  遍历类型   0-先序遍历   1-中序遍历   2-后序遍历
+     */
+    private void order(Node<T> root,int type) {
+        if(root != null) {
+            if(type == 0) {
+                System.out.println(root.getData());
+                order(root.getLeft(),type);
+                order(root.getRight(),type);
+            } else if (type == 1) {
+                order(root.getLeft(),type);
+                System.out.println(root.getData());
+                order(root.getRight(),type);
+            }else {
+                order(root.getLeft(),type);
+                order(root.getRight(),type);
+                System.out.println(root.getData());
+            }
+
+        }
+
+    }
+
+
+
+
+
+
 
 
     /**
