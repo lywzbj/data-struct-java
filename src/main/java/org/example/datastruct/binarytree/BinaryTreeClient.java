@@ -5,15 +5,24 @@ public class BinaryTreeClient {
 
     public static void main(String[] args) {
 
-        ListBinaryTree<Integer> integerListBinaryTree = new ListBinaryTree<Integer>(null);
+
+
+        SortBinaryTree integerListBinaryTree = new SortBinaryTree();
         integerListBinaryTree.add(1);
-        integerListBinaryTree.add(2);
-        integerListBinaryTree.add(3);
-        integerListBinaryTree.add(4);
-        integerListBinaryTree.add(5);
         integerListBinaryTree.add(6);
+        integerListBinaryTree.add(15);
+        integerListBinaryTree.add(56);
+        integerListBinaryTree.add(5);
+        integerListBinaryTree.add(30);
+      //  System.out.println(integerListBinaryTree);
+
         integerListBinaryTree.inOrder();
-        System.out.println(integerListBinaryTree);
+
+
+
+
+
+
     }
 
 

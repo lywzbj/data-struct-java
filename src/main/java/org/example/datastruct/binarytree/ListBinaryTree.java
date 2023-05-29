@@ -25,6 +25,13 @@ public class ListBinaryTree<T> {
 
 
     /**
+     * 层数
+     */
+    private int maxLevel =0;
+
+
+
+    /**
      * 上次走过的路径  0-表示左边   1-表示右边
      */
     private int way = 0;
@@ -35,6 +42,11 @@ public class ListBinaryTree<T> {
 
     public int size() {
         return this.size;
+    }
+
+
+    public int getMaxLevel() {
+        return maxLevel;
     }
 
 
@@ -82,10 +94,14 @@ public class ListBinaryTree<T> {
                 order(root.getRight(),type);
                 System.out.println(root.getData());
             }
-
         }
-
     }
+
+
+
+
+
+
 
 
 
@@ -102,6 +118,7 @@ public class ListBinaryTree<T> {
         // 如果头节点为空，则直接设置根节点
         if (this.head == null) {
             this.head = new Node<T>(t,null);
+            this.head.setLevel(1);
             this.size++;
             return true;
         }
@@ -109,10 +126,16 @@ public class ListBinaryTree<T> {
         Node<T> tNode = find(this.head);
         Node<T> addNode = new Node<T>(t, null);
         addNode.setParent(tNode);
+        int nextLevel = tNode.getLevel();
+        int maxLevel =  nextLevel + 1;
+        // 层数加一
+        addNode.setLevel(maxLevel);
+        maxLevel = Math.max(nextLevel,maxLevel);
+        // 设置最大层数
+        this.maxLevel = maxLevel;
         if(tNode.getLeft() == null) {
             tNode.setLeft(addNode);
             this.size++;
-
             return true;
         }
 
@@ -196,6 +219,15 @@ public class ListBinaryTree<T> {
             this.left = left;
         }
 
+
+        public int getLevel() {
+            return level;
+        }
+
+        public void setLevel(int level) {
+            this.level = level;
+        }
+
         private T data;
 
         private Node parent;
@@ -204,6 +236,11 @@ public class ListBinaryTree<T> {
 
         private Node left;
 
+
+        /**
+         * 层数
+         */
+        private int level;
 
 
 
