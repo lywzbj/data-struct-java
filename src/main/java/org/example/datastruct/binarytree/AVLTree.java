@@ -1,6 +1,8 @@
 package org.example.datastruct.binarytree;
 
 
+import org.example.utils.BinaryUtil;
+
 /**
  * 平衡二叉树的实现
  */
@@ -27,13 +29,7 @@ public class AVLTree {
             BinaryNode node = tree.insert(tree.getRoot(), i);
             tree.setRoot(node);
         }
-
-
-        System.out.println(tree);
-
-
-
-
+        BinaryUtil.endForeach(tree.getRoot());
     }
 
 
