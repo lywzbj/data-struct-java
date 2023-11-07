@@ -12,6 +12,8 @@ public class BinaryNode {
     private BinaryNode right;
 
 
+    private BinaryNode parent;
+
 
     public BinaryNode(int key) {
         this.key = key;
@@ -48,5 +50,14 @@ public class BinaryNode {
 
     public void setRight(BinaryNode right) {
         this.right = right;
+    }
+
+
+    public BinaryNode getParent() {
+        return parent;
+    }
+
+    public void setParent(BinaryNode parent) {
+        this.parent = parent;
     }
 }
