@@ -116,6 +116,18 @@ public class BinaryUtil {
     }
 
 
+    public static int getHigh(BinaryNode node) {
+
+        Queue<BinaryNode> queue = new LinkedList<>();
+        queue.add(node);
+
+
+        return 0;
+
+    }
+
+
+
 
 
 
