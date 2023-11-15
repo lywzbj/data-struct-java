@@ -34,7 +34,7 @@ public interface IBinaryTree {
     default void middleSort(BinaryNode node){
         if(node != null) {
             middleSort(node.getLeft());
-            System.out.println(node.getKey() + " ");
+            System.out.print(node.getKey() + " ");
             middleSort(node.getRight());
         }
     }

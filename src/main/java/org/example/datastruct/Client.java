@@ -8,7 +8,7 @@ public class Client {
 
 
     public static void main(String[] args) {
-        int [] array = {2,4,11,20,34,7,41,20};
+        int [] array = {2,4,11,5,34,7,41,20};
 
         IBinaryTree sortTree = new SortBinaryTree();
 
@@ -21,17 +21,17 @@ public class Client {
             completeTree.add(i);
         }
 
-        System.out.println("前序遍历");
-        sortTree.preSort(sortTree.getRoot());
-        System.out.println("\n\r ============");
+        System.out.println("前序遍历\n\r");
+//        sortTree.preSort(sortTree.getRoot());
+//        System.out.println("\n\r ============");
         completeTree.preSort(completeTree.getRoot());
 
 
 
 
         System.out.println("\n\r中序遍历");
-        sortTree.middleSort(sortTree.getRoot());
-        System.out.println("\n\r ============");
+//        sortTree.middleSort(sortTree.getRoot());
+//        System.out.println("\n\r ============");
         completeTree.middleSort(completeTree.getRoot());
 
 
