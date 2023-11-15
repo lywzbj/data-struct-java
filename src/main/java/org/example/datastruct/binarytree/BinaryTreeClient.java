@@ -16,7 +16,7 @@ public class BinaryTreeClient {
         integerListBinaryTree.add(30);
       //  System.out.println(integerListBinaryTree);
 
-        integerListBinaryTree.inOrder();
+
 
 
 
