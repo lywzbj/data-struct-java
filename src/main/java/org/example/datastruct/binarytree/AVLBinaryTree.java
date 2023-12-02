@@ -50,12 +50,15 @@ public class AVLBinaryTree extends SortBinaryTree{
     }
 
     public void leftRotate(BinaryNode node) {
+        BinaryNode right = node.getRight();
+        right.setLeft(node);
         if(node == getRoot()) {
-            BinaryNode right = node.getRight();
             node.setRight(null);
             right.setParent(null);
-            right.setLeft(node);
             setRoot(right);
+        } else {
+            node.getParent().setRight(right);
+            right.setParent(node.getParent());
         }
     }
 
