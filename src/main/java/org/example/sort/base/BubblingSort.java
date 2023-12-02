@@ -1,22 +1,49 @@
 package org.example.sort.base;
 
+import java.io.FileNotFoundException;
+
 /**
  * 冒泡排序
  */
 public class BubblingSort {
 
 
-    public static void main(String[] args) {
-
-        int [] array = {2,5,22,90,1,20};
-
-        preSort(array);
 
 
-        System.out.println(array);
+
+
+    public static void main(String[] args) throws FileNotFoundException {
+
+
+    test();
 
 
     }
+
+
+
+
+
+    public static void test() {
+
+
+        try {
+
+            System.out.println("111111");
+            System.out.println( 1 / 0);
+        }catch (Exception e) {
+            System.out.println("发生异常");
+
+        }finally {
+            throw new RuntimeException("test");
+        }
+
+
+
+    }
+
+
+
 
 
 
@@ -42,21 +69,6 @@ public class BubblingSort {
                 }
             }
         }
-        
-        
-        
-        
-        
-
-
-        
-
-
-
-
-
-
-
     }
 
 
