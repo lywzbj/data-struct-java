@@ -21,6 +21,7 @@ public class AVLBinaryTree extends SortBinaryTree{
     public BinaryNode add(Integer i) {
         BinaryNode add = super.add(i);
         BinaryNode tmp  = add;
+
         if(add != getRoot()) {
             while (true) {
                 BinaryNode parent = tmp.getParent();
@@ -28,7 +29,7 @@ public class AVLBinaryTree extends SortBinaryTree{
                     break;
                 }
                 int nodeBalance = getNodeBalance(parent);
-                if(Math.abs(nodeBalance) < balance) {
+                if(Math.abs(nodeBalance) <= balance) {
                     tmp = parent;
                 } else {
                     // 执行旋转
@@ -51,6 +52,7 @@ public class AVLBinaryTree extends SortBinaryTree{
     public void leftRotate(BinaryNode node) {
         if(node == getRoot()) {
             BinaryNode right = node.getRight();
+            node.setRight(null);
             right.setParent(null);
             right.setLeft(node);
             setRoot(right);
