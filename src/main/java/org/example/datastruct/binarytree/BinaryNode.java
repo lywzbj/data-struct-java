@@ -60,4 +60,29 @@ public class BinaryNode {
     public void setParent(BinaryNode parent) {
         this.parent = parent;
     }
+
+
+    public boolean remove(BinaryNode node) {
+        if(node == null) {
+            throw new RuntimeException("节点不能为空");
+        }
+        if(getLeft() != null && getLeft() == node) {
+            setLeft(null);
+            return true;
+        }
+
+        if(getRight() != null && getRight() == node) {
+            setRight(null);
+            return true;
+        }
+
+        return false;
+    }
+
+
+    public boolean isLeaf() {
+        return getRight() == null && getLeft() == null;
+    }
+
+
 }

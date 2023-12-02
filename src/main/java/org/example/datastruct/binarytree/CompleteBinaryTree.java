@@ -24,29 +24,43 @@ public class CompleteBinaryTree implements IBinaryTree{
 
 
 
-    public void add(Integer value) {
+    public BinaryNode add(Integer value) {
 
         if(head == null) {
             BinaryNode node = new BinaryNode(value);
             this.head = node;
-            return;
+            return node;
         }
 
         BinaryNode node = getTailNode();
         BinaryNode newNode = new BinaryNode(value);
         if(node.getLeft() == null) {
             node.setLeft(newNode);
-            return;
         }
         if(node.getRight() == null) {
             node.setRight(newNode);
-            return;
         }
+        return newNode;
     }
 
     @Override
     public BinaryNode getRoot() {
         return head;
+    }
+
+    @Override
+    public void setRoot(BinaryNode binaryNode) {
+
+    }
+
+    @Override
+    public BinaryNode remove(Integer value) {
+        return null;
+    }
+
+    @Override
+    public BinaryNode find(Integer value) {
+        return null;
     }
 
 

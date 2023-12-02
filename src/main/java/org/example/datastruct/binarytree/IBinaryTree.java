@@ -7,11 +7,43 @@ public interface IBinaryTree {
      * 添加节点
      * @param value
      */
-    void add(Integer value);
+    BinaryNode add(Integer value);
 
 
 
     BinaryNode getRoot();
+
+
+
+    void setRoot(BinaryNode binaryNode);
+
+
+
+    /**
+     * 删除节点
+     * @param value
+     * @return
+     */
+    BinaryNode remove(Integer value);
+
+
+    /**
+     * 查找节点
+     * @param value
+     * @return
+     */
+    BinaryNode find(Integer value);
+
+
+    default int getHeight(BinaryNode node) {
+        if(node == null) {
+            return 0;
+        }
+        if(node.getRight() == null && node.getLeft() == null) {
+            return 1;
+        }
+        return Math.max(getHeight(node.getLeft()),getHeight(node.getRight())) + 1;
+    }
 
 
 
