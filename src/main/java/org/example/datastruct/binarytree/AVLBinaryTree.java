@@ -39,9 +39,8 @@ public class AVLBinaryTree extends SortBinaryTree{
                         break;
                     } else {
                         // 执行右旋
-
-
-
+                        rightRotate(parent);
+                        break;
                     }
                 }
             }
@@ -60,6 +59,23 @@ public class AVLBinaryTree extends SortBinaryTree{
             node.getParent().setRight(right);
             right.setParent(node.getParent());
         }
+        node.setParent(right);
+    }
+
+
+    public void rightRotate(BinaryNode node) {
+        BinaryNode left = node.getLeft();
+        left.setRight(node);
+        if(node == getRoot()) {
+            node.setRight(null);
+            left.setParent(null);
+            setRoot(left);
+        } else {
+            node.getParent().setLeft(left);
+            left.setParent(node.getParent());
+        }
+        node.setParent(left);
+
     }
 
 

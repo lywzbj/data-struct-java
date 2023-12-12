@@ -20,10 +20,10 @@ public class SortBinaryTree implements  IBinaryTree{
 
         AVLBinaryTree tree = new AVLBinaryTree();
         tree.add(100);
-        tree.add(110);
         tree.add(98);
-        tree.add(120);
-        tree.add(130);
+        tree.add(110);
+        tree.add(95);
+        tree.add(90);
 
 
         System.out.println(tree);
